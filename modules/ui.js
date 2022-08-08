@@ -21,13 +21,7 @@ export class StoreBooks {
 
   static removeBook(title) {
     const books = StoreBooks.getBooks();
-
-    books.forEach((book, index) => {
-      if (book.title === title) {
-        books.splice(index, 1);
-      }
-    });
-
+    books.splice(title, 1);
     localStorage.setItem('books', JSON.stringify(books));
   }
 }
@@ -42,10 +36,12 @@ export class UI {
   static addBookToList(book) {
     const bookList = document.getElementById('bookList');
 
-    const listContainer = document.createElement('div');
+    const listContainer = document.createElement('tr');
 
     listContainer.innerHTML = `
-      <p class="bookDetails">"${book.title}" by ${book.author}  <button class="remove">Remove</button></p>
+      <td class="bookTitle">"${book.title}"<span> By <span> </td>
+      <td class="bookAuthor" >${book.author}</td>  
+      <td><button class="remove">Remove</button></td>
       `;
 
     bookList.appendChild(listContainer);
@@ -53,7 +49,7 @@ export class UI {
 
   static deleteBook(el) {
     if (el.classList.contains('remove')) {
-      el.parentElement.remove();
+      el.parentElement.parentElement.remove();
     }
   }
 

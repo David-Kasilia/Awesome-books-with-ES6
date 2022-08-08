@@ -14,25 +14,27 @@ body {
   margin-left: 20px;
 }
 
-#bookList {
+table {
   border-style: solid;
   border-color: black;
   width: 95%;
   border-width: 5px;
+  background-color: gainsboro;
 }
 
-.bookDetails {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-style: hidden;
-  background-color: gainsboro;
-  width: 100%;
+.bookTitle {
   height: 65px;
   font-weight: 400;
   font-size: 18px;
   font-family: 'Open Sans', sans-serif;
-  letter-spacing: 2px;
+}
+
+.bookAuthor {
+  margin-left: 20px;
+  height: 65px;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 hr {
@@ -44,7 +46,7 @@ hr {
 }
 
 .remove {
-  margin-right: 50px;
+  margin-left: 550px;
   border-style: solid;
   border-color: black;
   border-width: 2px;

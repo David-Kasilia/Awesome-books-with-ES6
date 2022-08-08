@@ -1,7 +1,6 @@
 /* eslint-disable consistent-return */
 import { onNavItemClick, nav } from './modules/nav.js';
 import { UI } from './modules/ui.js';
-
 import { StoreBooks } from './modules/storebooks.js';
 import { BookList } from './modules/booklist.js';
 import { DateTime } from './luxon.js';
@@ -31,7 +30,9 @@ document.getElementById('bookForm').addEventListener('submit', (e) => {
 document.getElementById('bookList').addEventListener('click', (e) => {
   UI.deleteBook(e.target);
 
-  StoreBooks.removeBook(e.target.parentElement.previousElementSibling.textContent);
+  StoreBooks.removeBook(
+    e.target.parentElement.previousElementSibling.previousElementSibling.textContent,
+  );
 });
 
 const displayDate = document.getElementById('dateTime');

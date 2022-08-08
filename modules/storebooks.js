@@ -19,14 +19,8 @@ export class StoreBooks {
   }
 
   static removeBook(title) {
-    const books = StoreBooks.getBooks();
-
-    books.forEach((book, index) => {
-      if (book.title === title) {
-        books.splice(index, 1);
-      }
-    });
-
-    localStorage.setItem('books', JSON.stringify(books));
+    const booksListCollection = StoreBooks.getBooks();
+    booksListCollection.splice(title, 1);
+    localStorage.setItem('books', JSON.stringify(booksListCollection));
   }
 }
